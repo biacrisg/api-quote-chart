@@ -5,13 +5,11 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: 'http://localhost:3000',
+    origin: 'https://quote-chart-frontend-lbs7.vercel.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
 
-  const port = process.env.PORT || 3000;
-  await app.listen(port);
-
+  await app.listen(8080);
 }
 bootstrap();
